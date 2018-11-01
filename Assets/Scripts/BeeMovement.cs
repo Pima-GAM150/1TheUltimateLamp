@@ -6,7 +6,10 @@ public class BeeMovement : MonoBehaviour {
 
 	private bool dirRight = true;
     public float speed;
- 
+ 	public GameObject deathScreen;
+
+
+
     void Update () {
         if (dirRight)
             transform.Translate (Vector2.right * speed * Time.deltaTime);
@@ -30,9 +33,15 @@ public class BeeMovement : MonoBehaviour {
     	theScale.x *= -1;
     	transform.localScale = theScale;
     }
-    void OnTriggerEnter()
+    
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-    	//death screen and stop time
-    	
+    	if (col.gameObject.name == "Player")
+    	{
+    		deathScreen.SetActive(true);
+    		Time.timeScale = 0;
+    		//change pollen lost text to how much pollen lost
+    	}
     }
 }

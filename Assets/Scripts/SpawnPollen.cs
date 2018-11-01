@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class SpawnPollen : MonoBehaviour {
 
-	public float counter;
-	public bool canMakePollen;
+	public float counter1;
+	public bool canMakePollen1;
 
 	void Start()
 	{
-	
+		counter1 = 0;
+		canMakePollen1 = false;
 	}
 	void Update () 
 	{
 		
-		counter += Time.deltaTime;
-		if (canMakePollen == true && counter >= 5f)	
+		counter1 += Time.deltaTime;
+		if (canMakePollen1 == true && counter1 >= 5f)	
 		{
 			Debug.Log("I activated the if statement");
 			if (transform.childCount > 0 )
 			{
 				transform.GetChild(0).gameObject.SetActive(true);
-				canMakePollen = false;
-				counter = 0f;
+				canMakePollen1 = false;
+				counter1 = 0f;
 			}
 		}
 
@@ -30,8 +31,8 @@ public class SpawnPollen : MonoBehaviour {
 
 	public void SpawnPollenBall()
 	{
-		counter = 0f;
-		canMakePollen = true;
+		counter1 = 0f;
+		canMakePollen1 = true;
 		Debug.Log("I activated the SpawnPollenBall method");
 	}
 

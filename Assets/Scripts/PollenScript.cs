@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PollenScript : SpawnPollen {
+public class PollenScript : MonoBehaviour {
 
-	
+	public SpawnPollen spawnPollen;
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -18,7 +18,7 @@ public class PollenScript : SpawnPollen {
 	void ToggleActivation()
 	{
 		
-		SpawnPollenBall();
+		spawnPollen.SpawnPollenBall();
 		this.gameObject.SetActive(false);
 	}
 }
