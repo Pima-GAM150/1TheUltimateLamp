@@ -11,9 +11,18 @@ public class StoreScript : MonoBehaviour {
 	public int price = 0;
 	public GameObject availableGoldTextBox;
 
+	public GameObject buttonOne;
+	public GameObject buttonTwo;
+	public GameObject buttonThree;
+
+	public StoreScript buttonOneScript;
+	public StoreScript buttonTwoScript;
+	public StoreScript buttonThreeScript;
+
 	void Start()
 	{
 		pollen = Manager.singleton.pollenBanked;
+		availableGoldTextBox.GetComponent<Text>().text = "Pollen:    " + pollen;
 	}
 	void Update () {
 		
@@ -21,10 +30,11 @@ public class StoreScript : MonoBehaviour {
 
 	public void ChangeButtonText () 
 	{
-		if (pollen >= price)
+		if (boughtMoth == false && pollen >= price)
 		{
 			boughtMoth = true;
 			Manager.singleton.pollenBanked -= price;
+			availableGoldTextBox.GetComponent<Text>().text = "Pollen:" + pollen;
 		}
 		
 		if ( isBuyButton == true && boughtMoth == true)
@@ -37,11 +47,30 @@ public class StoreScript : MonoBehaviour {
 		{
 			this.gameObject.GetComponentInChildren<Text>().text = "Currently Equipped";
 			//isBuyButton = true;
+			ChangeBooleans();
 		}
 	}
 	public int pollen
     {
         get { return Manager.singleton.pollenBanked; }
         set { Manager.singleton.pollenBanked = value; }
+    }
+    public void ChangeBooleans()
+    {
+    	if (buttonOneScript.boughtMoth == true)
+    	{
+    		buttonOne.GetComponentInChildren<Text>().text = "Equip";
+    		buttonOneScript.isBuyButton = false;
+    	}
+    	if (buttonTwoScript.boughtMoth == true)
+    	{
+    		buttonTwo.GetComponentInChildren<Text>().text = "Equip";
+    		buttonTwoScript.isBuyButton = false;
+    	}
+    	if (buttonThreeScript.boughtMoth == true)
+    	{
+    		buttonThree.GetComponentInChildren<Text>().text = "Equip";
+    		buttonThreeScript.isBuyButton = false;
+    	}
     }
 }

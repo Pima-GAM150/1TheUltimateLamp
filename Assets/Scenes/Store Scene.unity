@@ -248,10 +248,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boughtMoth: 0
-  isBuyButton: 1
+  boughtMoth: 1
+  isBuyButton: 0
   price: 0
-  availableGoldTextBox: {fileID: 0}
+  availableGoldTextBox: {fileID: 756501815}
+  buttonOne: {fileID: 953909282}
+  buttonTwo: {fileID: 1929076078}
+  buttonThree: {fileID: 1772997318}
+  buttonOneScript: {fileID: 953909287}
+  buttonTwoScript: {fileID: 1929076083}
+  buttonThreeScript: {fileID: 1772997323}
 --- !u!1 &236957851
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -316,8 +322,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Buy (150P)
 --- !u!222 &236957854
@@ -338,7 +344,7 @@ GameObject:
   - component: {fileID: 756501818}
   - component: {fileID: 756501817}
   m_Layer: 0
-  m_Name: Text
+  m_Name: AvailablePollenText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -394,7 +400,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '1: '
 --- !u!222 &756501818
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -602,7 +608,13 @@ MonoBehaviour:
   boughtMoth: 0
   isBuyButton: 1
   price: 100
-  availableGoldTextBox: {fileID: 0}
+  availableGoldTextBox: {fileID: 756501815}
+  buttonOne: {fileID: 197063775}
+  buttonTwo: {fileID: 1929076078}
+  buttonThree: {fileID: 1772997318}
+  buttonOneScript: {fileID: 197063780}
+  buttonTwoScript: {fileID: 1929076083}
+  buttonThreeScript: {fileID: 1772997323}
 --- !u!1 &1067947754
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -667,8 +679,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Buy (100P)
 --- !u!222 &1067947757
@@ -725,7 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -742,8 +754,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Buy (250P)
 --- !u!222 &1156660258
@@ -866,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -883,8 +895,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Currently Equipped
 --- !u!222 &1467800196
@@ -1031,6 +1043,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
+        type: 2}
+      propertyPath: pollenBanked
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bec52f530f7259469da86e095f2ef4f, type: 2}
   m_IsPrefabAsset: 0
@@ -1172,7 +1189,13 @@ MonoBehaviour:
   boughtMoth: 0
   isBuyButton: 1
   price: 250
-  availableGoldTextBox: {fileID: 0}
+  availableGoldTextBox: {fileID: 756501815}
+  buttonOne: {fileID: 197063775}
+  buttonTwo: {fileID: 953909282}
+  buttonThree: {fileID: 1929076078}
+  buttonOneScript: {fileID: 197063780}
+  buttonTwoScript: {fileID: 953909287}
+  buttonThreeScript: {fileID: 1929076083}
 --- !u!1 &1783572611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,4 +1412,10 @@ MonoBehaviour:
   boughtMoth: 0
   isBuyButton: 1
   price: 150
-  availableGoldTextBox: {fileID: 0}
+  availableGoldTextBox: {fileID: 756501815}
+  buttonOne: {fileID: 197063775}
+  buttonTwo: {fileID: 953909282}
+  buttonThree: {fileID: 1772997318}
+  buttonOneScript: {fileID: 197063780}
+  buttonTwoScript: {fileID: 953909287}
+  buttonThreeScript: {fileID: 1772997323}
