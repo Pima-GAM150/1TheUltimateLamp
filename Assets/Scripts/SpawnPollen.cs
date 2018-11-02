@@ -18,7 +18,7 @@ public class SpawnPollen : MonoBehaviour {
 		counter1 += Time.deltaTime;
 		if (canMakePollen1 == true && counter1 >= 5f)	
 		{
-			Debug.Log("I activated the if statement");
+			
 			if (transform.childCount > 0 )
 			{
 				transform.GetChild(0).gameObject.SetActive(true);
@@ -33,7 +33,7 @@ public class SpawnPollen : MonoBehaviour {
 	{
 		counter1 = 0f;
 		canMakePollen1 = true;
-		Debug.Log("I activated the SpawnPollenBall method");
+		
 	}
 
 }

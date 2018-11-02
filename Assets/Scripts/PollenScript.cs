@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PollenScript : MonoBehaviour {
 
 	public SpawnPollen spawnPollen;
-	
-	void OnTriggerEnter2D(Collider2D col)
+    public GameObject pollenOnHandText;
+    public GameObject pollenOnHandDeathText;
+
+
+    void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.name == "Player" )
 		{
 			Manager.singleton.pollenOnHand += 1;
-			ToggleActivation();
+            pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
+            pollenOnHandDeathText.GetComponent<Text>().text = "Pollen Lost:  " + Manager.singleton.pollenOnHand;
+            ToggleActivation();
 		}
 	}
 

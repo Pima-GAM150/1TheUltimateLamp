@@ -8,7 +8,6 @@ public class CameraMovement : MonoBehaviour {
 	public float offset;
 	public float mothPosY;
 	public float camPosY;
-
 	// Use this for initialization
 	void Start () {
 		camPosY = transform.position.y;
@@ -18,12 +17,16 @@ public class CameraMovement : MonoBehaviour {
 	}
 	void Update()
 	{
-		camPosY = transform.position.y;
+        
+        camPosY = transform.position.y;
 		mothPosY = moth.transform.position.y;
 	}
 	// Update is called once per frame
 	void LateUpdate () {
-		camPosY = mothPosY + offset;
-		transform.position = new Vector3(10.1f, camPosY, -60f);
-	}
+        if (mothPosY >= -6)
+        {
+            camPosY = mothPosY + offset;
+            transform.position = new Vector3(10.1f, camPosY, -60f);
+        }
+    }
 }
