@@ -9,11 +9,25 @@ public class PlayerMovement : MonoBehaviour {
 	public Rigidbody2D rbody;
 	public float jumpPower;
     public float smoothSpeed;
-	
+    float dragTarget;
+    public float dragChangeSpeed;
+    public float maxDrag;
+    public float minDrag;
+
+
 	// Update is called once per frame
 	void Update () {
-		
+        rbody.drag = Mathf.Lerp(rbody.drag, dragTarget, dragChangeSpeed);
+        
 		xInput = Input.GetAxis( "Horizontal" );
+        if( xInput == 0f )
+        {
+            dragTarget = maxDrag;
+        }
+        if( Input.GetButton("Down"))
+        {
+            dragTarget = minDrag;
+        }
 		if( Input.GetButtonDown( "Jump" ) ){
 			Jump();
 		}
