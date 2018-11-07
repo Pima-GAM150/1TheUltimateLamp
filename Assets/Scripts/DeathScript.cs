@@ -8,10 +8,11 @@ public class DeathScript : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D col)
     {
-    	if (col.gameObject.name == "Player")
+    	if (col.gameObject.tag == "Player")
     	{
     		deathScreen.SetActive(true);
     		Time.timeScale = 0;
+            Manager.singleton.pollenOnHand = 0;
     		//change pollen lost text to how much pollen lost
     	}
     }

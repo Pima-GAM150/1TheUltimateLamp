@@ -11,7 +11,13 @@ public class LampScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		pollenBankedText = GameObject.Find("PollenBankedAmount");
+        pollenOnHandText = GameObject.Find("PollenOnHandAmount");
+        pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
+        pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + Manager.singleton.pollenBanked;
+        
+
+
 	}
 	
 	// Update is called once per frame
@@ -21,13 +27,14 @@ public class LampScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.tag == "Player")
         {
             Manager.singleton.pollenBanked += Manager.singleton.pollenOnHand;
             Manager.singleton.pollenOnHand = 0;
             pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
             pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + Manager.singleton.pollenBanked;
-            pollenOnHandDeathText.GetComponent<Text>().text = "Pollen Lost:  " + Manager.singleton.pollenOnHand;
+            Manager.singleton.lastLampPos = this.transform.position;
+
         }
     }
 }

@@ -16,7 +16,7 @@ public class SpawnPollen : MonoBehaviour {
 	{
 		
 		counter1 += Time.deltaTime;
-		if (canMakePollen1 == true && counter1 >= 5f)	
+		if (canMakePollen1 == true && counter1 >= 20f)	
 		{
 			
 			if (transform.childCount > 0 )

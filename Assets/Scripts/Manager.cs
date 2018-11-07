@@ -7,7 +7,10 @@ public class Manager : MonoBehaviour {
 	public static Manager singleton;
 	public int pollenBanked;
 	public int pollenOnHand;
-
+	public Vector3 lastLampPos;
+	public GameObject newMoth;
+	public GameObject oldMoth;
+	public string activeMoth;
 
 
 	void Awake () {
@@ -20,12 +23,19 @@ public class Manager : MonoBehaviour {
 		{
 			Destroy( this.gameObject);
 		}
+		
 	}
 	void Start()
 	{
 		
 	}
-    
+    public void Deactivate()
+	{
+		//gameOverUI.SetActive(false);
+		//winScreen.SetActive(false);
+		
+	}
+	
 	
 	
 }

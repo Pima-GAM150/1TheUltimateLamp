@@ -18,6 +18,8 @@ public class StoreScript : MonoBehaviour {
 	public StoreScript buttonOneScript;
 	public StoreScript buttonTwoScript;
 	public StoreScript buttonThreeScript;
+	public string thisMoth;
+	
 
 	void Start()
 	{
@@ -46,7 +48,7 @@ public class StoreScript : MonoBehaviour {
 		else if ( isBuyButton == false && boughtMoth == true)
 		{
 			this.gameObject.GetComponentInChildren<Text>().text = "Currently Equipped";
-			//isBuyButton = true;
+			SetActiveMoth();
 			ChangeBooleans();
 		}
 	}
@@ -72,5 +74,9 @@ public class StoreScript : MonoBehaviour {
     		buttonThree.GetComponentInChildren<Text>().text = "Equip";
     		buttonThreeScript.isBuyButton = false;
     	}
+    }
+    public void SetActiveMoth()
+    {
+    	PlayerPrefs.SetString("activeMoth", thisMoth);
     }
 }
