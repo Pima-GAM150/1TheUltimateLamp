@@ -10,7 +10,7 @@ public class StoreScript : MonoBehaviour {
 	public bool isBuyButton = true;
 	public int price = 0;
 	public GameObject availableGoldTextBox;
-
+	public int boughtMothInt;
 	public GameObject buttonOne;
 	public GameObject buttonTwo;
 	public GameObject buttonThree;
@@ -19,12 +19,33 @@ public class StoreScript : MonoBehaviour {
 	public StoreScript buttonTwoScript;
 	public StoreScript buttonThreeScript;
 	public string thisMoth;
-	
+	public string saveName;
+	public string currentActiveMoth;
+
+
 
 	void Start()
 	{
-		pollen = Manager.singleton.pollenBanked;
-		availableGoldTextBox.GetComponent<Text>().text = "Pollen:    " + pollen;
+		boughtMothInt = PlayerPrefs.GetInt(saveName, boughtMothInt);
+		if (boughtMothInt == 0)
+		{
+			boughtMoth = false;
+		}
+		else
+		{
+			boughtMoth = true;
+			this.gameObject.GetComponentInChildren<Text>().text = "Equip";
+			isBuyButton = false;
+		}
+		currentActiveMoth = PlayerPrefs.GetString("activeMoth");
+		if (currentActiveMoth == thisMoth)
+		{
+			this.gameObject.GetComponentInChildren<Text>().text = "Currently Equipped";
+
+		}
+
+		
+		availableGoldTextBox.GetComponent<Text>().text = "Pollen:    " + PlayerPrefs.GetInt("pollenBanked");
 	}
 	void Update () {
 		
@@ -32,11 +53,13 @@ public class StoreScript : MonoBehaviour {
 
 	public void ChangeButtonText () 
 	{
-		if (boughtMoth == false && pollen >= price)
+		if (boughtMoth == false && PlayerPrefs.GetInt("pollenBanked") >= price)
 		{
 			boughtMoth = true;
+			boughtMothInt = 1;
+			PlayerPrefs.SetInt(saveName, boughtMothInt);
 			Manager.singleton.pollenBanked -= price;
-			availableGoldTextBox.GetComponent<Text>().text = "Pollen:" + pollen;
+			availableGoldTextBox.GetComponent<Text>().text = "Pollen:    " + PlayerPrefs.GetInt("pollenBanked");
 		}
 		
 		if ( isBuyButton == true && boughtMoth == true)
@@ -52,11 +75,7 @@ public class StoreScript : MonoBehaviour {
 			ChangeBooleans();
 		}
 	}
-	public int pollen
-    {
-        get { return Manager.singleton.pollenBanked; }
-        set { Manager.singleton.pollenBanked = value; }
-    }
+	
     public void ChangeBooleans()
     {
     	if (buttonOneScript.boughtMoth == true)

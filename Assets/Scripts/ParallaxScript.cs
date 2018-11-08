@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParallaxScript : MonoBehaviour {
 
+
+	public float scrollSpeed;
 	// Use this for initialization
 	void Start () {
 		

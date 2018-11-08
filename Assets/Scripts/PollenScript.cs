@@ -8,7 +8,7 @@ public class PollenScript : MonoBehaviour {
 	public SpawnPollen spawnPollen;
     public GameObject pollenOnHandText;
     public GameObject pollenOnHandDeathText;
-  
+  	public GameObject pollenNoisePrefab;
 	void Start()
 	{
 		spawnPollen = this.gameObject.GetComponentInParent<SpawnPollen>();
@@ -18,10 +18,12 @@ public class PollenScript : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Player" )
 		{
+			Instantiate(pollenNoisePrefab);
 			Manager.singleton.pollenOnHand += 1;
             pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
             pollenOnHandDeathText.GetComponent<Text>().text = "Pollen Lost:  " + Manager.singleton.pollenOnHand;
             ToggleActivation();
+            
 		}
 	}
 

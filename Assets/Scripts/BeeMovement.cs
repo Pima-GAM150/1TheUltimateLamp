@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeeMovement : MonoBehaviour {
 
-	private bool dirRight = true;
+	private bool dirRight = false;
     public float speed;
  	public GameObject deathScreen;
 

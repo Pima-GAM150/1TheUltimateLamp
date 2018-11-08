@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour {
 
 	private float xInput;
@@ -18,8 +18,16 @@ public class PlayerMovement : MonoBehaviour {
     GameObject moth3;
     GameObject moth4;
     Transform currentMoth;
- 
+    
 
+    public GameObject currentLocTxt;
+    public float locFloat;
+    public int locInt;
+    public string locString;
+
+    public GameObject HighestLocTxt;
+    public string HLString;
+    public int HLInt;
 
     public string currentMothString;
     public string oldMothString;
@@ -28,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start ()
     {
-    	transform.position = new Vector3(Manager.singleton.lastLampPos.x, Manager.singleton.lastLampPos.y, 0f);
+    	transform.position = new Vector3(PlayerPrefs.GetFloat("LampPosX"), PlayerPrefs.GetFloat("LampPosY"), 0f);
               
         currentMothString = PlayerPrefs.GetString("activeMoth", "Moth1");
         
@@ -37,7 +45,9 @@ public class PlayerMovement : MonoBehaviour {
         GameObject playerMoth = currentMoth.gameObject;
         playerMoth.SetActive(true);
         
-        
+        HLInt = PlayerPrefs.GetInt("highPoint");
+        HLString = HLInt.ToString();
+        HighestLocTxt.GetComponent<Text>().text = HLString;
 
 
     }
@@ -57,9 +67,28 @@ public class PlayerMovement : MonoBehaviour {
 		if( Input.GetButtonDown( "Jump" ) ){
 			Jump();
 		}
+        
+        locFloat = this.transform.position.y;
+        locInt = Mathf.RoundToInt(locFloat);
+        locString = locInt.ToString();
+        currentLocTxt.GetComponent<Text>().text = locString;
+
+        if(locInt > HLInt)
+        {
+            HLInt = locInt;
+            PlayerPrefs.SetInt("highPoint", HLInt);
+            HLString = HLInt.ToString();
+            HighestLocTxt.GetComponent<Text>().text = HLString;
+        }
+
+        
+
+
 
         //change Vector3.forward to the current position - the previous
         transform.up = rbody.velocity;
+
+
 	}
 
 	void FixedUpdate() {

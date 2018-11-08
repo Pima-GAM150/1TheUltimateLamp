@@ -9,12 +9,12 @@ using System.IO;
 
 public static class SaveEverything {
 
-	/*public static void SaveGame(Manager Manager)
+	/*public static void SaveGame()
 	{
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream stream = new FileStream(Application.persistentDataPath + "/game.sav", FileMode.Create);
 
-		StoreAndPlayerData data = new StoreAndPlayerData(Manager);
+		StoreAndPlayerData data = new StoreAndPlayerData();
 
 		bf.Serialize(stream, data);
 		stream.Close();
@@ -26,22 +26,82 @@ public static class SaveEverything {
 	{
 		if(File.Exists(Application.persistentDataPath + "/game.sav"))
 		{
-			BinaryFormatter bf = new BinaryFormatter(Application.persistentDataPath + "/game.sav", FileMode.Open);
-			FileStream stream = File.Open(Ap);
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream stream = File.Open(Application.persistentDataPath + "/game.sav", FileMode.Open);
+			StoreAndPlayerData data = new StoreAndPlayerData(stream) as StoreAndPlayerData;
+
+			stream.Close();
+			return data.stats;
+
 		}
-	}*/
+		else{
+			Debug.LogError("File does not exist.");
+
+		}
+	}
 }
 
-/*[Serializable]
+[Serializable]
 class StoreAndPlayerData
 {
-	public String currentMoth;
+	public int[] saveInts;
+	public string saveString;
+	public Vector3 saveSpawn;
 
-	public Moth (Manager Manager)
+	public saveData()
 	{
-		currentMoth = Manager.singleton.equippedMoth;
+		
+		saveInts[0] = PlayerPrefs.GetInt("Moth1");
+		saveInts[1] = PlayerPrefs.GetInt("Moth2");
+		saveInts[2] = PlayerPrefs.GetInt("Moth3");
+		saveInts[3] = PlayerPrefs.GetInt("Moth4");
+		saveInts[4] = Manager.singleton.pollenBanked;
+
+		saveString = Manager.singleton.activeMoth;
+		saveSpawn = Manager.singleton.lastLampPos;
+	}*/
+
+
+	/*public string Save()
+	{
+		SaveableData saveable = new SaveableData{
+			saveInts[0] = PlayerPrefs.GetInt("Moth1"),
+			saveInts[1] = PlayerPrefs.GetInt("Moth2"),
+			saveInts[2] = PlayerPrefs.GetInt("Moth3"),
+			saveInts[3] = PlayerPrefs.GetInt("Moth4"),
+			saveInts[4] = Manager.singleton.pollenBanked,
+			saveString = Manager.singleton.activeMoth,
+			saveSpawn = Manager.singleton.lastLampPos
+		};
+
+		string saveData = JsonUtility.ToJson( saveable );
+
+		return saveData;
+
 	}
+	public void Load( string saveData )
+	{
+		SaveableData saveable = JsonUtility.FromJson<SaveableData>( saveData );
+
+		PlayerPrefs.GetInt("Moth1") = saveable.saveInts[0];
+		PlayerPrefs.GetInt("Moth2") = saveable.saveInts[1];
+		PlayerPrefs.GetInt("Moth3") = saveable.saveInts[2];
+		PlayerPrefs.GetInt("Moth4") = saveable.saveInts[3];
+		Manager.singleton.pollenBanked = saveable.saveInts[4];
+		Manager.singleton.activeMoth = saveable.saveString;
+		Manager.singleton.lastLampPos = saveable.saveSpawn;
+	}*/
+
+	
 		
 
 
-}*/
+}
+
+public class SaveableData{
+
+	public int[] saveInts;
+	public string saveString;
+	public Vector3 saveSpawn;
+
+}

@@ -23,7 +23,7 @@ public class Manager : MonoBehaviour {
 		{
 			Destroy( this.gameObject);
 		}
-		
+		pollenBanked = PlayerPrefs.GetInt("pollenBanked");
 	}
 	void Start()
 	{
