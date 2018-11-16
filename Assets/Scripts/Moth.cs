@@ -11,6 +11,7 @@ public class Moth : MonoBehaviour {
 
     public string Save()
     {
+        print(name + " is savings its saved state to " + state);
         SerializableStoreButton saveable = new SerializableStoreButton
         {
             state = (int)state,
@@ -23,6 +24,7 @@ public class Moth : MonoBehaviour {
     public void Load(string json)
     {
         SerializableStoreButton saved = JsonUtility.FromJson<SerializableStoreButton>(json);
+        print(name + " is setting its saved state to " + saved.state);
         state = (Moth.StoreButtonState)saved.state;
     }
 }

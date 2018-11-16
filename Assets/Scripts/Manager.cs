@@ -8,7 +8,8 @@ public class Manager : MonoBehaviour {
 	public int pollenBanked;
 	public int pollenOnHand;
 	public Vector3 lastLampPos;
-
+    public bool paused;
+    public bool canPause;
     public Moth[] moths;
 
 	void Awake () {
@@ -16,6 +17,10 @@ public class Manager : MonoBehaviour {
 		{
 			singleton = this;
 			DontDestroyOnLoad( this.gameObject);
+
+            string saveData = PlayerPrefs.GetString("defaultSave", "");
+            if (saveData == "") Save("defaultSave");
+            Load(saveData);
 		}
 		else
 		{
@@ -23,8 +28,9 @@ public class Manager : MonoBehaviour {
 		}
 	}
     
-    public void Save()
+    public void Save( string saveName )
     {
+        print("Saving game with name " + saveName);
         SerializableStore saveable = new SerializableStore
         {
             pollenBanked = this.pollenBanked,
@@ -39,13 +45,14 @@ public class Manager : MonoBehaviour {
 
         string json = JsonUtility.ToJson(saveable);
 
-        PlayerPrefs.SetString("mySave", json);
+        PlayerPrefs.SetString(saveName, json);
     }
 
-    public void Load()
+    public void Load( string saveName )
     {
-        string json = PlayerPrefs.GetString("mySave", "");
-        if (json == "") return;
+        print("Loading game with name " + saveName);
+        string json = PlayerPrefs.GetString(saveName, "");
+        if (json == "") json = PlayerPrefs.GetString("defaultSave", "");
 
         SerializableStore saved = JsonUtility.FromJson<SerializableStore>(json);
 

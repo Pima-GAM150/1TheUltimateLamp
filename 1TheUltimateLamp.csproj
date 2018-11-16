@@ -324,7 +324,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PollenScript.cs" />
     <Compile Include="Assets\Scripts\ResetData.cs" />
-    <Compile Include="Assets\Scripts\SaveEverything.cs" />
+    <Compile Include="Assets\Scripts\ReturnToGame.cs" />
     <Compile Include="Assets\Scripts\SpawnPollen.cs" />
     <Compile Include="Assets\Scripts\StoreButton.cs" />
     <Compile Include="Assets\Scripts\StoreScript.cs" />

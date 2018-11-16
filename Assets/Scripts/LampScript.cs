@@ -18,8 +18,8 @@ public class LampScript : MonoBehaviour {
 		pollenBankedText = GameObject.Find("PollenBankedAmount");
         pollenOnHandText = GameObject.Find("PollenOnHandAmount");
         pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
-        pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + PlayerPrefs.GetInt("pollenBanked");
-        
+        pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + Manager.singleton.pollenBanked;
+        Manager.singleton.Load("mySave");
 
 
 	}
@@ -35,18 +35,14 @@ public class LampScript : MonoBehaviour {
         {
             Instantiate(depositNoisePrefab);
             Manager.singleton.pollenBanked += Manager.singleton.pollenOnHand;
-            int pb = Manager.singleton.pollenBanked;
-            PlayerPrefs.SetInt("pollenBanked", pb);
             Manager.singleton.pollenOnHand = 0;
             pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
-            pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + PlayerPrefs.GetInt("pollenBanked");
-            PlayerPrefs.SetFloat("LampPosX", this.transform.position.x);
-            PlayerPrefs.SetFloat("LampPosY", this.transform.position.y);
+            pollenBankedText.GetComponent<Text>().text = "Pollen Banked:  " + Manager.singleton.pollenBanked;
             locFloat = this.transform.position.y;
             locInt = Mathf.RoundToInt(locFloat);
             locString = locInt.ToString();
             lampLocTxt.GetComponent<Text>().text = locString;
-
+            Manager.singleton.Save( "mySave" );
         }
     }
 }

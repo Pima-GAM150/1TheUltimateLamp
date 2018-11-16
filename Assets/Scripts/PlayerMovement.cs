@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     public float maxDrag;
     public float minDrag;
 
+    public GameObject pauseScreen;
     public SpriteRenderer rend;
 
     public GameObject currentLocTxt;
@@ -32,15 +33,16 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start ()
     {
-    	transform.position = new Vector3(PlayerPrefs.GetFloat("LampPosX"), PlayerPrefs.GetFloat("LampPosY"), 0f);
-              
-        currentMothString = PlayerPrefs.GetString("activeMoth", "Moth1");
+        Manager.singleton.Load( "mySave" );
+        
         
         HLInt = PlayerPrefs.GetInt("highPoint");
         HLString = HLInt.ToString();
         HighestLocTxt.GetComponent<Text>().text = HLString;
 
         ChooseMoth();
+        Manager.singleton.paused = false;
+        Manager.singleton.canPause = true;
     }
 
     void ChooseMoth()
@@ -53,15 +55,15 @@ public class PlayerMovement : MonoBehaviour {
         rbody.drag = Mathf.Lerp(rbody.drag, dragTarget, dragChangeSpeed);
         
 		xInput = Input.GetAxis( "Horizontal" );
-        if( xInput == 0f )
+        if( xInput == 0f && Manager.singleton.paused == false)
         {
             dragTarget = maxDrag;
         }
-        if( Input.GetButton("Down"))
+        if( Input.GetButton("Down") && Manager.singleton.paused == false)
         {
             dragTarget = minDrag;
         }
-		if( Input.GetButtonDown( "Jump" ) ){
+		if( Input.GetButtonDown( "Jump" ) && Manager.singleton.paused == false){
 			Jump();
 		}
         
@@ -78,6 +80,21 @@ public class PlayerMovement : MonoBehaviour {
             HighestLocTxt.GetComponent<Text>().text = HLString;
         }
 
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (Manager.singleton.paused == false && Manager.singleton.canPause == true)
+            {
+                Time.timeScale = 0;
+                pauseScreen.SetActive(true);
+                Manager.singleton.paused = true;
+            }
+            else if (Manager.singleton.canPause == true)
+            {
+                Time.timeScale = 1;
+                pauseScreen.SetActive(false);
+                Manager.singleton.paused = false;
+            }
+        }
         
 
 

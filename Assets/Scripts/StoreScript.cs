@@ -5,6 +5,12 @@ using UnityEngine.UI;
 public class StoreScript : MonoBehaviour {
 
     public StoreButton[] storeButtons;
+    public GameObject pBTxt;
+
+    public void Start()
+    {
+        pBTxt.GetComponent<Text>().text = "Pollen:    " + Manager.singleton.pollenBanked;
+    }
 
     public void ButtonPressed( StoreButton buttonThatWasPressed )
     {
@@ -14,6 +20,7 @@ public class StoreScript : MonoBehaviour {
             {
                 Manager.singleton.pollenBanked -= buttonThatWasPressed.pollenCost;
                 buttonThatWasPressed.moth.state = Moth.StoreButtonState.Equip;
+                pBTxt.GetComponent<Text>().text = "Pollen:    " + Manager.singleton.pollenBanked;
             }
         }
         else if (buttonThatWasPressed.moth.state == Moth.StoreButtonState.Equip)

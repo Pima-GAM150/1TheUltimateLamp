@@ -201,7 +201,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1142938878}
+      - m_Target: {fileID: 197063780}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -209,7 +209,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mySave
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -724,6 +724,7 @@ MonoBehaviour:
   - {fileID: 953909287}
   - {fileID: 1929076083}
   - {fileID: 1772997323}
+  pBTxt: {fileID: 756501815}
 --- !u!4 &806301991
 Transform:
   m_ObjectHideFlags: 0
@@ -887,7 +888,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1142938878}
+      - m_Target: {fileID: 953909287}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -895,7 +896,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mySave
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1161,12 +1162,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068450346}
   m_CullTransparentMesh: 0
---- !u!114 &1142938878 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1710718424}
-  m_Script: {fileID: 11500000, guid: 3e7ac94ddb567174aa98839fee25bc3c, type: 3}
 --- !u!1 &1156660255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1726,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
+        type: 2}
+      propertyPath: pollenBanked
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bec52f530f7259469da86e095f2ef4f, type: 2}
   m_IsPrefabAsset: 0
@@ -1822,7 +1822,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1142938878}
+      - m_Target: {fileID: 1772997323}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -1830,7 +1830,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mySave
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2145,7 +2145,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1142938878}
+      - m_Target: {fileID: 1929076083}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -2153,7 +2153,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mySave
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

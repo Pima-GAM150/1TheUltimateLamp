@@ -26,6 +26,11 @@ public class StoreButton : MonoBehaviour {
             label.text += " (" + pollenCost + ")";
         }
     }
+
+    public void Save()
+    {
+        Manager.singleton.Save("mySave");
+    }
 }
 
 public class SerializableStoreButton

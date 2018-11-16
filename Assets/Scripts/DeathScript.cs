@@ -17,6 +17,7 @@ public class DeathScript : MonoBehaviour {
     		//change pollen lost text to how much pollen lost
             camMove.DeathAudio();
             Instantiate(deathNoisePrefab);
+            Manager.singleton.canPause = false;
 
     	}
     }

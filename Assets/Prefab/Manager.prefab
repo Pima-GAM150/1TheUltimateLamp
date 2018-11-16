@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7ac94ddb567174aa98839fee25bc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenBanked: 500
+  pollenBanked: 0
   pollenOnHand: 0
   lastLampPos: {x: 0, y: 0, z: 0}
   moths:
