@@ -313,16 +313,29 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BeeMovement.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\DeathScript.cs" />
-    <Compile Include="Assets\Scripts\EndGame.cs" />
+    <Compile Include="Assets\Scripts\ExitGame.cs" />
+    <Compile Include="Assets\Scripts\ExplosionScript.cs" />
     <Compile Include="Assets\Scripts\LampScript.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\Moth.cs" />
+    <Compile Include="Assets\Scripts\ParallaxScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PollenScript.cs" />
+    <Compile Include="Assets\Scripts\ResetData.cs" />
+    <Compile Include="Assets\Scripts\SaveEverything.cs" />
     <Compile Include="Assets\Scripts\SpawnPollen.cs" />
+    <Compile Include="Assets\Scripts\StoreButton.cs" />
     <Compile Include="Assets\Scripts\StoreScript.cs" />
+    <Compile Include="Assets\Scripts\WinScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Free Pack\Door SFX Pack\Readme.txt" />
+    <None Include="Assets\Free Pack\Metal Loop Pack\readme Unity.txt" />
+    <None Include="Assets\Free Pack\Rock Loops Pack\Unity Readme.txt" />
+    <None Include="Assets\Free Pack\Rock Stingers Pack\Unity Readme.txt" />
+    <None Include="Assets\Free Pack\Tropical Moments\Tropical Moments readme.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

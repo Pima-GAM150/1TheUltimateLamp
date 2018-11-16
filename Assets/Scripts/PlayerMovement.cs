@@ -13,12 +13,8 @@ public class PlayerMovement : MonoBehaviour {
     public float dragChangeSpeed;
     public float maxDrag;
     public float minDrag;
-    Transform moth1;
-    GameObject moth2;
-    GameObject moth3;
-    GameObject moth4;
-    Transform currentMoth;
-    
+
+    public SpriteRenderer rend;
 
     public GameObject currentLocTxt;
     public float locFloat;
@@ -40,17 +36,18 @@ public class PlayerMovement : MonoBehaviour {
               
         currentMothString = PlayerPrefs.GetString("activeMoth", "Moth1");
         
-        
-        currentMoth = this.transform.Find(currentMothString);
-        GameObject playerMoth = currentMoth.gameObject;
-        playerMoth.SetActive(true);
-        
         HLInt = PlayerPrefs.GetInt("highPoint");
         HLString = HLInt.ToString();
         HighestLocTxt.GetComponent<Text>().text = HLString;
 
-
+        ChooseMoth();
     }
+
+    void ChooseMoth()
+    {
+        rend.sprite = Manager.singleton.currentMoth.appearance;
+    }
+
 	// Update is called once per frame
 	void Update () {
         rbody.drag = Mathf.Lerp(rbody.drag, dragTarget, dragChangeSpeed);
@@ -98,23 +95,4 @@ public class PlayerMovement : MonoBehaviour {
 	void Jump() {
 		rbody.AddForce( Vector2.up * jumpPower, ForceMode2D.Impulse );
 	}
-    public void MothOneStats()
-    {
-
-    }
-
-    public void MothTwoStats()
-    {
-        
-    }
-
-    public void MothThreeStats()
-    {
-        
-    }
-
-    public void MothFourStats()
-    {
-        
-    }
 }

@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/codyc/Desktop/Game Design stuff/Finished Games/1TheUltimateLamp.exe
+E:/1TheUltimateLamp.exe
 SceneListBegin?
 Assets/Scenes/StartScene.unity
 Assets/Scenes/Store Scene.unity

@@ -190,8 +190,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197063780}
-        m_MethodName: ChangeButtonText
+      - m_Target: {fileID: 806301990}
+        m_MethodName: ButtonPressed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 197063780}
+          m_ObjectArgumentAssemblyTypeName: StoreButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1142938878}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -245,23 +256,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 197063775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
+  m_Script: {fileID: 11500000, guid: c82901f666a285649bd04b3b5d9ddd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boughtMoth: 1
-  isBuyButton: 1
-  price: 0
-  availableGoldTextBox: {fileID: 756501815}
-  boughtMothInt: 0
-  buttonOne: {fileID: 953909282}
-  buttonTwo: {fileID: 1929076078}
-  buttonThree: {fileID: 1772997318}
-  buttonOneScript: {fileID: 953909287}
-  buttonTwoScript: {fileID: 1929076083}
-  buttonThreeScript: {fileID: 1772997323}
-  thisMoth: Moth1
-  saveName: Moth1
-  currentActiveMoth: 
+  label: {fileID: 1467800195}
+  pollenCost: 0
+  moth: {fileID: 114771335787117502, guid: e913c2fbbc2144941b5721760f668e7d, type: 2}
 --- !u!1 &236957851
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +692,51 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 756501815}
   m_CullTransparentMesh: 0
+--- !u!1 &806301989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806301991}
+  - component: {fileID: 806301990}
+  m_Layer: 0
+  m_Name: Store
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &806301990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806301989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeButtons:
+  - {fileID: 197063780}
+  - {fileID: 953909287}
+  - {fileID: 1929076083}
+  - {fileID: 1772997323}
+--- !u!4 &806301991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806301989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 542.00116, y: 400.98013, z: -7.8578634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824736563
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,8 +876,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953909287}
-        m_MethodName: ChangeButtonText
+      - m_Target: {fileID: 806301990}
+        m_MethodName: ButtonPressed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 953909287}
+          m_ObjectArgumentAssemblyTypeName: StoreButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1142938878}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -886,23 +942,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 953909282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
+  m_Script: {fileID: 11500000, guid: c82901f666a285649bd04b3b5d9ddd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boughtMoth: 0
-  isBuyButton: 1
-  price: 25
-  availableGoldTextBox: {fileID: 756501815}
-  boughtMothInt: 0
-  buttonOne: {fileID: 197063775}
-  buttonTwo: {fileID: 1929076078}
-  buttonThree: {fileID: 1772997318}
-  buttonOneScript: {fileID: 197063780}
-  buttonTwoScript: {fileID: 1929076083}
-  buttonThreeScript: {fileID: 1772997323}
-  thisMoth: Moth2
-  saveName: Moth2
-  currentActiveMoth: 
+  label: {fileID: 1067947756}
+  pollenCost: 25
+  moth: {fileID: 114268262744448180, guid: de7592cafed48b6408e9ee8fe1301503, type: 2}
 --- !u!1 &998017557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1161,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068450346}
   m_CullTransparentMesh: 0
+--- !u!114 &1142938878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1710718424}
+  m_Script: {fileID: 11500000, guid: 3e7ac94ddb567174aa98839fee25bc3c, type: 3}
 --- !u!1 &1156660255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,51 +1731,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: pollenBanked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: availableGoldTextBox
-      value: 
-      objectReference: {fileID: 756501815}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonOne
-      value: 
-      objectReference: {fileID: 197063775}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonTwo
-      value: 
-      objectReference: {fileID: 953909282}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonThree
-      value: 
-      objectReference: {fileID: 1929076078}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonOneScript
-      value: 
-      objectReference: {fileID: 197063780}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonTwoScript
-      value: 
-      objectReference: {fileID: 953909287}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: buttonThreeScript
-      value: 
-      objectReference: {fileID: 1929076083}
-    - target: {fileID: 114592290308922658, guid: 7bec52f530f7259469da86e095f2ef4f,
-        type: 2}
-      propertyPath: oldMoth
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bec52f530f7259469da86e095f2ef4f, type: 2}
   m_IsPrefabAsset: 0
@@ -1805,8 +1811,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1772997323}
-        m_MethodName: ChangeButtonText
+      - m_Target: {fileID: 806301990}
+        m_MethodName: ButtonPressed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1772997323}
+          m_ObjectArgumentAssemblyTypeName: StoreButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1142938878}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1860,23 +1877,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772997318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
+  m_Script: {fileID: 11500000, guid: c82901f666a285649bd04b3b5d9ddd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boughtMoth: 0
-  isBuyButton: 1
-  price: 40
-  availableGoldTextBox: {fileID: 756501815}
-  boughtMothInt: 0
-  buttonOne: {fileID: 197063775}
-  buttonTwo: {fileID: 953909282}
-  buttonThree: {fileID: 1929076078}
-  buttonOneScript: {fileID: 197063780}
-  buttonTwoScript: {fileID: 953909287}
-  buttonThreeScript: {fileID: 1929076083}
-  thisMoth: Moth4
-  saveName: Moth4
-  currentActiveMoth: 
+  label: {fileID: 1156660257}
+  pollenCost: 40
+  moth: {fileID: 114309969344304906, guid: 2aa03378d867e794ea09b499985e6b7e, type: 2}
 --- !u!1 &1783572611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,8 +2134,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1929076083}
-        m_MethodName: ChangeButtonText
+      - m_Target: {fileID: 806301990}
+        m_MethodName: ButtonPressed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1929076083}
+          m_ObjectArgumentAssemblyTypeName: StoreButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1142938878}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2183,23 +2200,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929076078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fcee886558fd141a4cdf1462f8fb08, type: 3}
+  m_Script: {fileID: 11500000, guid: c82901f666a285649bd04b3b5d9ddd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boughtMoth: 0
-  isBuyButton: 1
-  price: 30
-  availableGoldTextBox: {fileID: 756501815}
-  boughtMothInt: 0
-  buttonOne: {fileID: 197063775}
-  buttonTwo: {fileID: 953909282}
-  buttonThree: {fileID: 1772997318}
-  buttonOneScript: {fileID: 197063780}
-  buttonTwoScript: {fileID: 953909287}
-  buttonThreeScript: {fileID: 1772997323}
-  thisMoth: Moth3
-  saveName: Moth3
-  currentActiveMoth: 
+  label: {fileID: 236957853}
+  pollenCost: 30
+  moth: {fileID: 114695551868936558, guid: 7a7ca5eb6ef1dd6458c48df1528ea9ce, type: 2}
 --- !u!1 &2133558378
 GameObject:
   m_ObjectHideFlags: 0
