@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour {
 
@@ -11,8 +13,10 @@ public class Manager : MonoBehaviour {
     public bool paused;
     public bool canPause;
     public Moth[] moths;
+    public GameObject pollenOnHandText;
+    public GameObject pollenOnHandDeathText;
 
-	void Awake () {
+    void Awake () {
 		if (singleton == null)
 		{
 			singleton = this;
@@ -27,7 +31,9 @@ public class Manager : MonoBehaviour {
 			Destroy( this.gameObject);
 		}
 	}
-    
+
+   
+
     public void Save( string saveName )
     {
         print("Saving game with name " + saveName);
@@ -77,7 +83,20 @@ public class Manager : MonoBehaviour {
             return moths[0];
         }
     }
+
+    public void ChangeText()
+    {
+        pollenOnHandText = GameObject.Find("PollenOnHandAmount");
+        pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
+    }
+    public void ChangeDeathText()
+    {
+        pollenOnHandDeathText = GameObject.Find("Pollen Lost");
+        pollenOnHandDeathText.GetComponent<Text>().text = "Pollen Lost:  " + Manager.singleton.pollenOnHand;
+    }
 }
+
+
 
 public class SerializableStore
 {

@@ -20,11 +20,10 @@ public class PollenScript : MonoBehaviour {
 		{
 			Instantiate(pollenNoisePrefab);
 			Manager.singleton.pollenOnHand += 1;
-            pollenOnHandText.GetComponent<Text>().text = "Pollen Held:  " + Manager.singleton.pollenOnHand;
-            pollenOnHandDeathText.GetComponent<Text>().text = "Pollen Lost:  " + Manager.singleton.pollenOnHand;
             ToggleActivation();
             
 		}
+        Manager.singleton.ChangeText();
 	}
 
 	void ToggleActivation()

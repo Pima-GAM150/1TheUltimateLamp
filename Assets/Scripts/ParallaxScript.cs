@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ParallaxScript : MonoBehaviour {
 
+    public GameObject cam;
+    public GameObject bg;
+    public float newBGpos;
 
-	public float scrollSpeed;
-	// Use this for initialization
-	void Start () {
-		
+    public float bgPos;
+    public float camPos;
+    
+    // Update is called once per frame
+    void Update () {
+        camPos = transform.position.y;
+        bgPos = transform.position.y;
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void LateUpdate()
+    {
+        bgPos = camPos * 0.9f;
+    }
 }

@@ -118,6 +118,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPollen: {fileID: 114945798723760312}
+  pollenOnHandText: {fileID: 1585953289228918, guid: 07618cb5949618d40a69239e23c26e10,
+    type: 2}
+  pollenOnHandDeathText: {fileID: 1335351319071612, guid: 0fe4a24982b526c4cbaaf22bc9050c97,
+    type: 2}
+  pollenNoisePrefab: {fileID: 1497583807360236, guid: ef52cce6c8c3cce4dbbf81af857270b4,
+    type: 2}
 --- !u!114 &114945798723760312
 MonoBehaviour:
   m_ObjectHideFlags: 1

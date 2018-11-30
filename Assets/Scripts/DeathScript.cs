@@ -13,12 +13,15 @@ public class DeathScript : MonoBehaviour {
     	{
     		deathScreen.SetActive(true);
     		Time.timeScale = 0;
+
+            Manager.singleton.ChangeDeathText();
             Manager.singleton.pollenOnHand = 0;
-    		//change pollen lost text to how much pollen lost
+    		
             camMove.DeathAudio();
             Instantiate(deathNoisePrefab);
             Manager.singleton.canPause = false;
 
     	}
+        
     }
 }
