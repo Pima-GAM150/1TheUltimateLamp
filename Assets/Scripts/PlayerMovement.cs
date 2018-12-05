@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
         ChooseMoth();
         Manager.singleton.paused = false;
         Manager.singleton.canPause = true;
+        this.transform.position = Manager.singleton.lastLampPos;
     }
 
     void ChooseMoth()
@@ -111,5 +112,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Jump() {
 		rbody.AddForce( Vector2.up * jumpPower, ForceMode2D.Impulse );
+		GetComponent<Animator>().SetTrigger( "flap" );
 	}
 }

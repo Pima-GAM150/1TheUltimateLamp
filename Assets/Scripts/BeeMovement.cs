@@ -21,7 +21,7 @@ public class BeeMovement : MonoBehaviour {
             dirRight = false;
         }
         
-        if(transform.position.x <= -43) {
+        if(transform.position.x <= -43.0f) {
             Flip();
             dirRight = true;
         }
@@ -30,7 +30,11 @@ public class BeeMovement : MonoBehaviour {
     void Flip()
     {
     	Vector3 theScale = transform.localScale;
-    	theScale.x *= -1;
+    	if (dirRight)
+    		theScale.x = 5;
+    	else
+    		theScale.x = -5;
+    	//theScale.x *= -1;
     	transform.localScale = theScale;
     }
     

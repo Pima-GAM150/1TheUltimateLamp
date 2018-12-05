@@ -42,6 +42,7 @@ public class LampScript : MonoBehaviour {
             locInt = Mathf.RoundToInt(locFloat);
             locString = locInt.ToString();
             lampLocTxt.GetComponent<Text>().text = locString;
+            Manager.singleton.lastLampPos = this.transform.position;
             Manager.singleton.Save( "mySave" );
         }
     }
