@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4472775469342960}
   - component: {fileID: 114771335787117502}
+  - component: {fileID: 95575028675356166}
   m_Layer: 0
   m_Name: Moth 1
   m_TagString: Untagged
@@ -40,6 +41,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95575028675356166
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059205431802264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d320f5e2d7143e8439cc6deb31dc3736, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114771335787117502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,5 +70,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3d912f5011e3a428a8b8c2fad048f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 2
+  state: 1
   appearance: {fileID: 21300000, guid: 742824a69fd9d1a4da40484c68ba8f52, type: 3}

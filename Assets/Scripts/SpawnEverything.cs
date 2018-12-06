@@ -22,7 +22,7 @@ public class SpawnEverything : MonoBehaviour {
         for(int i = 0; i < 500; i++)
         {
             rndX = Random.Range(-43f, 43f);
-            rndY = Random.Range(-43f, 14450f);
+            rndY = Random.Range(0f, 14450f);
             GameObject newPollenPrefab = Instantiate(pollenPrefab, new Vector2(rndX, rndY), transform.rotation);
 
         }

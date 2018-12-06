@@ -26,24 +26,36 @@ public class PlayerMovement : MonoBehaviour {
     public string HLString;
     public int HLInt;
 
-    public string currentMothString;
+    public string currentMoth;
     public string oldMothString;
+    public Animator anim;
 
-
+    public RuntimeAnimatorController Moth;
+    public RuntimeAnimatorController Moth2;
+    public RuntimeAnimatorController Moth3;
+    public RuntimeAnimatorController Moth4;
 
     void Start ()
     {
         Manager.singleton.Load( "mySave" );
-        
-        
+       
+        anim = this.GetComponent<Animator>();
         HLInt = PlayerPrefs.GetInt("highPoint");
         HLString = HLInt.ToString();
-        HighestLocTxt.GetComponent<Text>().text = HLString;
+        //HighestLocTxt.GetComponent<Text>().text = HLString;
 
         ChooseMoth();
         Manager.singleton.paused = false;
         Manager.singleton.canPause = true;
         this.transform.position = Manager.singleton.lastLampPos;
+        //if (Manager.singleton.currentMoth.appearance.name == "Moth2") print("Moth2 is selected");
+        currentMoth = Manager.singleton.currentMoth.appearance.name;
+		if (currentMoth == "Moth") anim.runtimeAnimatorController = Moth;
+		else if (currentMoth =="Moth2") anim.runtimeAnimatorController = Moth2;
+		else if (currentMoth =="Moth3") anim.runtimeAnimatorController = Moth3;
+		else if (currentMoth =="Moth4") anim.runtimeAnimatorController = Moth4;
+		
+
     }
 
     void ChooseMoth()
@@ -77,7 +89,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             HLInt = locInt;
             PlayerPrefs.SetInt("highPoint", HLInt);
-            HLString = HLInt.ToString();
+            //HLString = HLInt.ToString();
             HighestLocTxt.GetComponent<Text>().text = HLString;
         }
 
@@ -112,6 +124,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Jump() {
 		rbody.AddForce( Vector2.up * jumpPower, ForceMode2D.Impulse );
-		GetComponent<Animator>().SetTrigger( "flap" );
+		 anim.SetTrigger( "flap" );
 	}
 }
