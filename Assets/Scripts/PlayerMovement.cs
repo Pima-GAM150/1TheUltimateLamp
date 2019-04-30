@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
         this.transform.position = Manager.singleton.lastLampPos;
         //if (Manager.singleton.currentMoth.appearance.name == "Moth2") print("Moth2 is selected");
         currentMoth = Manager.singleton.currentMoth.appearance.name;
-		if (currentMoth == "Moth") anim.runtimeAnimatorController = Moth;
+		if (currentMoth == "Moth1") anim.runtimeAnimatorController = Moth;
 		else if (currentMoth =="Moth2") anim.runtimeAnimatorController = Moth2;
 		else if (currentMoth =="Moth3") anim.runtimeAnimatorController = Moth3;
 		else if (currentMoth =="Moth4") anim.runtimeAnimatorController = Moth4;
