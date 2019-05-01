@@ -31,7 +31,13 @@ public class Manager : MonoBehaviour {
 			Destroy( this.gameObject);
 		}
 	}
+    public void Reset()
+    {
+        string saveData = PlayerPrefs.GetString("defaultSave", "");
+        if (saveData == "") Save("defaultSave");
+        Load(saveData);
 
+    }
    
 
     public void Save( string saveName )
@@ -56,6 +62,7 @@ public class Manager : MonoBehaviour {
 
     public void Load( string saveName )
     {
+        
         print("Loading game with name " + saveName);
         string json = PlayerPrefs.GetString(saveName, "");
         if (json == "") json = PlayerPrefs.GetString("defaultSave", "");
