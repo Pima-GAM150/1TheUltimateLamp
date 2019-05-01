@@ -6,7 +6,8 @@ public class ResetData : MonoBehaviour {
 
 public void clicked()
 {
+	//PlayerPrefs.DeleteAll();
 	PlayerPrefs.SetString("mySave", "");
-    //PlayerPrefs.SetString("defaultSave", "");
+    PlayerPrefs.SetString("defaultSave", "");
 }
 }

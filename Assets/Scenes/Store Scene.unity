@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 1467800195}
   pollenCost: 0
-  moth: {fileID: 114309969344304906, guid: 2aa03378d867e794ea09b499985e6b7e, type: 3}
+  moth: {fileID: 114309969344304906, guid: e913c2fbbc2144941b5721760f668e7d, type: 3}
 --- !u!1 &236957851
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy (30P)
+  m_Text: "Buy (200\x03P)"
 --- !u!222 &236957854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 1067947756}
-  pollenCost: 50
+  pollenCost: 100
   moth: {fileID: 114268262744448180, guid: de7592cafed48b6408e9ee8fe1301503, type: 3}
 --- !u!1 &998017557
 GameObject:
@@ -1137,7 +1137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy (25P)
+  m_Text: Buy (100P)
 --- !u!222 &1067947757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1290,7 +1290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Buy (40P)
+  m_Text: "Buy (500\x03)"
 --- !u!222 &1156660258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1984,8 +1984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 1156660257}
-  pollenCost: 150
-  moth: {fileID: 114771335787117502, guid: e913c2fbbc2144941b5721760f668e7d, type: 3}
+  pollenCost: 500
+  moth: {fileID: 114771335787117502, guid: 2aa03378d867e794ea09b499985e6b7e, type: 3}
 --- !u!1 &1783572611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 236957853}
-  pollenCost: 100
+  pollenCost: 200
   moth: {fileID: 114695551868936558, guid: 7a7ca5eb6ef1dd6458c48df1528ea9ce, type: 3}
 --- !u!1 &2133558378
 GameObject:

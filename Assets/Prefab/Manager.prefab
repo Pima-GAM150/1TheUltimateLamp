@@ -49,9 +49,9 @@ MonoBehaviour:
   paused: 0
   canPause: 0
   moths:
-  - {fileID: 114309969344304906, guid: 2aa03378d867e794ea09b499985e6b7e, type: 3}
+  - {fileID: 114309969344304906, guid: e913c2fbbc2144941b5721760f668e7d, type: 3}
   - {fileID: 114268262744448180, guid: de7592cafed48b6408e9ee8fe1301503, type: 3}
   - {fileID: 114695551868936558, guid: 7a7ca5eb6ef1dd6458c48df1528ea9ce, type: 3}
-  - {fileID: 114771335787117502, guid: e913c2fbbc2144941b5721760f668e7d, type: 3}
+  - {fileID: 114771335787117502, guid: 2aa03378d867e794ea09b499985e6b7e, type: 3}
   pollenOnHandText: {fileID: 0}
   pollenOnHandDeathText: {fileID: 0}

@@ -22,9 +22,9 @@ public class PlayerMovement : MonoBehaviour {
     public int locInt;
     public string locString;
 
-    public GameObject HighestLocTxt;
-    public string HLString;
-    public int HLInt;
+    //public GameObject HighestLocTxt;
+    //public string HLString;
+    //public int HLInt;
 
     public string currentMoth;
     public string oldMothString;
@@ -40,16 +40,17 @@ public class PlayerMovement : MonoBehaviour {
         Manager.singleton.Load( "mySave" );
        
         anim = this.GetComponent<Animator>();
-        HLInt = PlayerPrefs.GetInt("highPoint");
-        HLString = HLInt.ToString();
+//        HLInt = PlayerPrefs.GetInt("highPoint");
+        //HLString = HLInt.ToString();
         //HighestLocTxt.GetComponent<Text>().text = HLString;
 
         ChooseMoth();
         Manager.singleton.paused = false;
         Manager.singleton.canPause = true;
         this.transform.position = Manager.singleton.lastLampPos;
-        //if (Manager.singleton.currentMoth.appearance.name == "Moth2") print("Moth2 is selected");
+        if (Manager.singleton.currentMoth.appearance.name == "Moth") print("Moth is selected");
         currentMoth = Manager.singleton.currentMoth.appearance.name;
+        Debug.Log(currentMoth);
 		if (currentMoth == "Moth1") anim.runtimeAnimatorController = Moth;
 		else if (currentMoth =="Moth2") anim.runtimeAnimatorController = Moth2;
 		else if (currentMoth =="Moth3") anim.runtimeAnimatorController = Moth3;
@@ -85,13 +86,13 @@ public class PlayerMovement : MonoBehaviour {
         locString = locInt.ToString();
         currentLocTxt.GetComponent<Text>().text = locString;
 
-        if(locInt > HLInt)
-        {
-            HLInt = locInt;
-            PlayerPrefs.SetInt("highPoint", HLInt);
-            //HLString = HLInt.ToString();
-            HighestLocTxt.GetComponent<Text>().text = HLString;
-        }
+        // if(locInt > HLInt)
+        // {
+        //     HLInt = locInt;
+        //     PlayerPrefs.SetInt("highPoint", HLInt);
+        //     //HLString = HLInt.ToString();
+        //     HighestLocTxt.GetComponent<Text>().text = HLString;
+        // }
 
         if (Input.GetButtonDown("Cancel"))
         {
